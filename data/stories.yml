@@ -1,0 +1,64 @@
+version: "3.1"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: general request
+  steps:
+  - intent: general_request
+  - action: utter_general_catch_all
+  - action: utter_thank
+
+- story: agent request
+  steps:
+  - intent: agent_request
+  - action: utter_direct_vr
+  - action: utter_thank
+
+- story: Claim Filing
+  steps:
+  - intent: claim_filing
+  - action: utter_file_claim_steps
+  - action: utter_ask_policy_holder
+  - intent: policy_holder_answer
+    entities:
+      - policy_holder: Otto I. Bot
+  - action: utter_ask_policy_id
+  - intent: policy_id_answer 
+    entities:
+      - policy_id: 0000000
+  - action: utter_ask_accident_date
+  - intent: accident_date_answer
+    entities:
+      - accident_date: 05/25/2022
+  - action: utter_ask_location
+  - intent: location_answer
+    entities:
+      - location: urban
+  - action: utter_ask_police_report
+  - intent: police_report_answer
+    entities:
+      - police_report: Yes
+  - action: utter_ask_fault
+  - intent: fault_answer
+    entities:
+      - fault: Third party
+  - action: utter_thank
+
+
+- story: thank you
+  steps:
+  - intent: thank_you
+  - action: utter_thank
+
+- story: bye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+

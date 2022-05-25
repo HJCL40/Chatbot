@@ -1,0 +1,26 @@
+[
+  {
+    "name": "accident_date",
+    "pattern": "[0-9]{1,2}?/[0-9]{1,2}?/[0-9]{4}"
+  },
+  {
+    "name": "policy_holder",
+    "pattern": "^(?![\\s.]+$)[a-zA-Z\\s.]*$"
+  },
+  {
+    "name": "policy_id",
+    "pattern": "\\d{7,10}"
+  },
+  {
+    "name": "location",
+    "pattern": "(\\burban\\b|\\bUrban\\b|\\brural\\b|\\bRural\\b)"
+  },
+  {
+    "name": "police_report",
+    "pattern": "(\\byes\\b|\\bYes\\b|\\by\\b|\\bno\\b|\\bNo\\b|\\bn\\b)"
+  },
+  {
+    "name": "fault",
+    "pattern": "(\\bPolicy\\ Holder\\b|\\bnot\\ me\\b|\\bme\\b|\\bMe\\b|\\bThird\\ party\\b|\\bthem\\b|\\bThem\\b|\\bother\\b|\\bdriver\\b|\\bother\\ driver\\b|\\bother\\ party\\b)"
+  }
+]
