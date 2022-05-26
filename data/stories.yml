@@ -47,6 +47,7 @@ stories:
   - intent: fault_answer
     entities:
       - fault: Third party
+  - action: utter_received_info
   - action: utter_thank
 
 

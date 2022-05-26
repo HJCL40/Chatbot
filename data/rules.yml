@@ -12,11 +12,3 @@ rules:
   - intent: nlu_fallback
   - action: utter_please_rephrase
 
-- rule: Send general catch all if there are 3 consecutive instances wherein message sent has low NLU confidence
-  steps:
-  - intent: nlu_fallback
-  - action: utter_please_rephrase
-  - intent: nlu_fallback
-  - action: utter_please_rephrase
-  - intent: nlu_fallback
-  - action: utter_general_catch_all

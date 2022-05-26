@@ -1,94 +1,57 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - agent_request
-  - claim_filing
-  - thank_you
-  - general_request
-  - policy_holder_answer
-  - policy_id_answer
-  - accident_date_answer
-  - location_answer
-  - police_report_answer
-  - fault_answer
-
-
+- accident_date_answer
+- affirm
+- agent_request
+- claim_filing
+- deny
+- fault_answer
+- general_request
+- goodbye
+- greet
+- location_answer
+- police_report_answer
+- policy_holder_answer
+- policy_id_answer
+- thank_you
 entities:
-  - policy_holder
-  - policy_id
-  - accident_date
-  - location
-  - police_report
-  - fault
-
-#slots:
-#  policy_holder:
-#    type: text
-#    influence_conversation: false
-#  policy_id:
-#    type: text
-#    influence_conversation: false
-#  accident_date:
-#    type: text
-#    influence_conversation: false
-#  location:
-#    type: text
-#    influence_conversation: false
-#  police_report:
-#    type: text
-#    influence_conversation: false
-#  fault:
-#    type: text
-#    influence_conversation: false
-
+- policy_holder
+- policy_id
+- accident_date
+- location
+- police_report
+- fault
 responses:
   utter_greet:
-  - text: "Hi! Good Day! My name is Otto. How may I help you?"
-
+  - text: Hi! Good Day! My name is Otto. How may I help you?
   utter_general_catch_all:
-  - text: "Sorry, I may not be able to answer your inquiry. But if you want to file an auto insurance claim, you can type 'I want to file a claim'. If you want to chat with one of our virtual representatives, you can type 'I want to talk to a virtual representative'. For other questions related to your auto insurance policy or inquiries regarding our auto insurance offerings, you can call the insurance company hotline at (02) 8871-23-45 or send an email to customercare@insurance.com"
-
+  - text: Sorry, I may not be able to answer your inquiry. But if you want to file an auto insurance claim, you can type 'I want to file a claim'. If you want to chat with one of our virtual representatives, you can type 'I want to talk to a virtual representative'. For other questions related to your auto insurance policy or inquiries regarding our auto insurance offerings, you can call the insurance company hotline at (02) 8871-23-45 or send an email to customercare@insurance.com
   utter_direct_vr:
-  - text: "Hello! Please wait as we connect you to a virtual representative."
-
+  - text: Hello! Please wait as we connect you to a virtual representative.
   utter_file_claim_steps:
-  - text: "To help us find out if the accident is credible for auto insurance claim, please answer the next few questions."
-
+  - text: To help us find out if the accident is credible for auto insurance claim, please answer the next few questions.
   utter_thank:
-  - text: "Thank you for chatting with me. Should you wish to keep chatting with me for your other inquiries, just type 'Hi Otto.'. You can also call the insurance company hotline at (02) 8871-23-45 or send an email to customercare@insurance.com if you want to speak to a customer representative."
-
+  - text: Thank you for chatting with me. Should you wish to keep chatting with me for your other inquiries, just type 'Hi Otto.'. You can also call the insurance company hotline at (02) 8871-23-45 or send an email to customercare@insurance.com if you want to speak to a customer representative.
   utter_ask_policy_holder:
-  - text: "What is the full name of the Policy Holder? (Ex: Otto I. Bot)."
-
+  - text: 'What is the full name of the Policy Holder? (Ex: Otto I. Bot).'
   utter_ask_policy_id:
-  - text: "What is the policy id of the insurance policy that will be used for the claim? (Ex: 0113768)."
-
+  - text: 'What is the policy id of the insurance policy that will be used for the claim? (Ex: 0113768).'
   utter_ask_accident_date:
-  - text: "At what date did the accident being considered for insurance claim occur? (Please use the following date format: MM/DD/YYYY)."
-
+  - text: 'At what date did the accident being considered for insurance claim occur? (Please use the following date format: MM/DD/YYYY).'
   utter_ask_location:
-  - text: "Did the accident occur in an urban or rural area? (Please type either 'urban' or 'rural')"
-
+  - text: Did the accident occur in an urban or rural area? (Please type either 'urban' or 'rural')
   utter_ask_police_report:
-  - text: "Was a police report filed for the accident of concern? (Please type either 'Yes' or 'No')"
-
+  - text: Was a police report filed for the accident of concern? (Please type either 'Yes' or 'No')
   utter_ask_fault:
-  - text: "Which party was at fault for the accident of concern? (Please type either 'Policy Holder' or 'Third party')"
-
+  - text: Which party was at fault for the accident of concern? (Please type either 'Policy Holder' or 'Third party')
+  utter_received_info:
+  - text: We have received all the relevant details. Please wait for a representative to contact you about your insurance claim. You should receive a call in 1-2 business days.
   utter_goodbye:
-  - text: "Otto bot, signing off. I hope you have a pleasant day."
-
+  - text: Otto bot, signing off. I hope you have a pleasant day.
   utter_please_rephrase:
-  - text: "I'm sorry, I didn't quite understand that. Can you try rephrasing it?"
-
+  - text: I'm sorry, I didn't quite understand that. Can you try rephrasing it?
   utter_iamabot:
-  - text: "Please give me a break. I'm just a bot."
-
-
+  - text: Please give me a break. I'm just a bot.
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
